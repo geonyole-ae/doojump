@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#d9d2bd">
+  <title>두들 점프</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game">
+    <canvas id="screen" aria-label="게임 화면"></canvas>
+
+    <div class="hud-buttons">
+      <button id="mute-btn" class="icon-btn" type="button" aria-label="소리 끄기">🔊</button>
+      <button id="pause-btn" class="icon-btn hidden" type="button" aria-label="일시정지">❚❚</button>
+    </div>
+
+    <section id="start" class="overlay">
+      <h1 class="title">두들 점프</h1>
+      <p class="subtitle">발판을 밟고 끝없이 위로!</p>
+      <button id="start-btn" class="btn" type="button">시작하기</button>
+      <div class="howto">
+        <ul class="desk-only">
+          <li><kbd>←</kbd> <kbd>→</kbd> 또는 <kbd>A</kbd> <kbd>D</kbd> 이동</li>
+          <li><kbd>Space</kbd> 또는 <kbd>↑</kbd> 위로 쏘기</li>
+          <li><kbd>P</kbd> 일시정지 · <kbd>M</kbd> 소리</li>
+        </ul>
+        <ul class="touch-only">
+          <li>폰 기울이기: 이동 (아무 곳이나 탭하면 쏘기)</li>
+          <li>기울기가 안 되면 화면 아래쪽 왼쪽/오른쪽을 누르고 있으면 이동</li>
+          <li>화면 위쪽 탭: 쏘기</li>
+        </ul>
+        <ul class="legend">
+          <li><i class="chip green"></i>일반 <i class="chip blue"></i>움직임 <i class="chip brown"></i>부서짐 <i class="chip white"></i>1회용</li>
+          <li>몬스터는 밟거나 쏘고, 블랙홀은 피하세요!</li>
+        </ul>
+      </div>
+      <p class="best">최고 기록 <b id="best-start">0</b></p>
+    </section>
+
+    <section id="over" class="overlay hidden">
+      <h2>게임 오버</h2>
+      <p class="score-line">점수 <b id="final-score">0</b></p>
+      <p class="score-line">최고 기록 <b id="final-best">0</b></p>
+      <p id="new-record" class="new-record hidden">🎉 새 기록!</p>
+      <button id="retry-btn" class="btn" type="button">다시 하기</button>
+      <p class="hint desk-only">Enter 키로도 다시 시작할 수 있어요</p>
+    </section>
+
+    <section id="pause" class="overlay hidden">
+      <h2>일시정지</h2>
+      <button id="resume-btn" class="btn" type="button">계속하기</button>
+      <p class="hint desk-only">P 또는 Esc 키로 계속</p>
+    </section>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
